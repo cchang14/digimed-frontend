@@ -1,0 +1,90 @@
+@use '~@angular/material' as mat;
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// http://mcg.mbitson.com/
+
+$md-blue: (
+    50 : #e1e9f5,
+    100 : #b5c9e6,
+    200 : #83a5d6,
+    300 : #5180c6,
+    400 : #2c65b9,
+    500 : #074aad,
+    600 : #0643a6,
+    700 : #053a9c,
+    800 : #043293,
+    900 : #022283,
+    A100 : #b0beff,
+    A200 : #7d94ff,
+    A400 : #4a6aff,
+    A700 : #3056ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-grey: (
+    50 : #ededed,
+    100 : #d1d1d1,
+    200 : #b3b3b3,
+    300 : #949494,
+    400 : #7d7d7d,
+    500 : #666666,
+    600 : #5e5e5e,
+    700 : #535353,
+    800 : #494949,
+    900 : #383838,
+    A100 : #f49c9c,
+    A200 : #ef6e6e,
+    A400 : #ff2a2a,
+    A700 : #ff1111,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$my-primary: mat-palette($md-blue);
+$my-accent: mat-palette($md-grey);
+
+$my-theme: mat-light-theme($my-primary, $my-accent);
+
+// font
+$display-typography: 'Noto Serif';
+$custom-typography: mat.define-typography-config(
+    $font-family: 'Nunito',
+    $headline: mat-typography-level(24px, 32px, 700, $display-typography), // h1
+    $title: mat-typography-level(20px, 24px, 700, $display-typography), // h2
+    $subheading-2: mat-typography-level(16px, 20px, 700, $display-typography), // h3
+);
+
+@include mat.core($custom-typography);
+@include angular-material-theme($my-theme);
+

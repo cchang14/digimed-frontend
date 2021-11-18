@@ -1,0 +1,31 @@
+@import '../../../styles/global/variables';
+
+.sidenav {
+    height: 100%;
+    background-color: $color-white;
+    padding: 1em;
+    min-width: 240px;
+}
+
+mat-icon {
+    font-size: 15px;
+}
+
+mat-nav-list > span {
+    margin-left: 0.5em;
+}
+
+li > a {
+    display: block;
+    padding: 1em;
+}
+
+li > a:hover {
+    background-color: $color-light-blue;
+}
+
+.active-sidebar {
+    color: $primary-color;
+    background-color: $color-light-blue;
+    border-left: 3px solid $primary-color;
+}

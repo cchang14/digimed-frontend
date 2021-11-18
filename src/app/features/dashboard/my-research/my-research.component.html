@@ -1,0 +1,15 @@
+<div fxLayout="row" fxFlexFill>
+    <div class="sidenav">
+        <app-sidebar 
+            [defaultNav]="defaultNav"></app-sidebar>
+    </div>
+
+    <div class="content" fxLayout="row" fxLayoutAlign="none start" fxLayoutGap="1em">
+        <mat-card [routerLink]="'/dataset'">Dataset</mat-card>
+        <mat-card>Publication</mat-card>
+        <mat-card>Software</mat-card>
+        <mat-card>Codebook</mat-card>
+
+    </div>
+
+</div>

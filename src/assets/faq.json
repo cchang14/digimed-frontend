@@ -1,0 +1,14 @@
+[
+    { 
+        "question": "How do I upload my files?", 
+        "answer": "Files can be uploaded from your local computer or from the cloud or remote servers via a URL. Up to 300GB can be uploaded per DOI. When using a URL, Google Drive links do not work, so please choose another mechanism. If using links from GitHub, link to the individual files rather than the repository as a whole. To confirm that files have uploaded successfully, check that all files have a size greater than 0 B."
+    },
+    { 
+        "question": "What are the size limits?", 
+        "answer": "Files can be uploaded from your local computer or from the cloud or remote servers via a URL. Up to 300GB can be uploaded per DOI. When using a URL, Google Drive links do not work, so please choose another mechanism. If using links from GitHub, link to the individual files rather than the repository as a whole. To confirm that files have uploaded successfully, check that all files have a size greater than 0 B."
+    },
+    { 
+        "question": "What happens after I submit my data?", 
+        "answer": "Files can be uploaded from your local computer or from the cloud or remote servers. Up to 300GB can be uploaded per DOI. Google Drive links do not work, so please choose another mechanism. If using links from GitHub, link to the individual files rather than the repository as a whole. To confirm that files have uploaded successfully, check that all files have a size greater than 0 B."
+    }
+]

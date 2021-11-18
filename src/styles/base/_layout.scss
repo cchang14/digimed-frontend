@@ -1,0 +1,30 @@
+// breakpoints: priortize bigger screen 
+@mixin for-desktop-down {
+    @media (max-width: 1200px) { @content; }
+}
+@mixin for-tablet-landscape-down {
+    @media (max-width: 900px) { @content; }
+}
+@mixin for-tablet-portrait-down {
+    @media (max-width: 600px) { @content; }
+}
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+
+.container {
+    width: 1200px;
+
+    @include for-desktop-down {
+        width: 900px;
+    }
+    @include for-tablet-landscape-down {
+        width: 600px;
+    }
+    // @include for-tablet-portrait-down {
+    //     width: 750px;
+    // }
+    @include for-phone-only {
+        width: 95%;
+    }
+}

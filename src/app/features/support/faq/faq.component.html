@@ -1,0 +1,15 @@
+<h2>Frequently Asked Questions</h2>
+
+<form class="search-container">
+    <input type="text" class="form-control" placeholder="Search keywords" name="search"
+        [(ngModel)]="searchText">
+</form>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let item of items | appFilter: searchText">
+        <mat-expansion-panel-header>
+            {{ item.question }}
+        </mat-expansion-panel-header>
+            {{ item.answer }}
+    </mat-expansion-panel>
+</mat-accordion>

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/base/theme.scss';
+@import './styles/base/layout';
+@import './styles/global/variables';
+
+html, body { height: 100%; background-color: $bg-color-light; }
+
+* { margin: 0; padding: 0;}
+
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $color-black;
+}

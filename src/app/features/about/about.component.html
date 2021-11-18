@@ -1,0 +1,25 @@
+<!-- <div fxLayout="column" fxLayoutAlign="none center"> -->
+<!-- <div class="container"> -->
+    <div fxLayout="row" fxFlexFill>
+        <div class="sidenav">
+            <app-sidebar 
+                [defaultNav]="defaultNav"
+                [navTitle]="navTitle"
+                [itemList]="itemList"></app-sidebar>
+        </div>
+
+        <div class="content">
+            <!-- <div *ngIf="onAbout; else elseContent">
+                <a routerLink="project">project</a>
+            </div> -->
+            <!-- <ng-template #elseContent> -->
+                <router-outlet></router-outlet>
+            <!-- </ng-template> -->
+        </div>
+
+    </div>
+<!-- </div> -->
+<!-- </div> -->
+
+
+

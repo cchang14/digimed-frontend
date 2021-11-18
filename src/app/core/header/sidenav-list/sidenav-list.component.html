@@ -1,0 +1,21 @@
+<div fxLayout="column" fxLayoutGap="1em">
+    <a mat-button [routerLink]="'/about/project'" color="accent" (click)="onSidenavClose()">About</a>
+    <a mat-button [routerLink]="'/support/faq'" color="accent" (click)="onSidenavClose()">Support</a>
+    <a mat-button [routerLink]="'/search'" color="accent" (click)="onSidenavClose()">Explore</a>
+    <a mat-button [routerLink]="'/my-research'" color="accent" (click)="onSidenavClose()">My Research</a>
+    
+    <!-- NOT logged in -->
+    <a *ngIf="!isLoggedIn" mat-flat-button [routerLink]="'/signup'" color="primary" (click)="onSidenavClose()">Sign up</a>
+    <a  *ngIf="!isLoggedIn" mat-stroked-button [routerLink]="'/login'" color="primary" (click)="onSidenavClose()">Login</a>
+
+    <!-- logged in -->
+    <a *ngIf="isLoggedIn" mat-flat-button [matMenuTriggerFor]="actions" color="primary">Upload</a>
+        <mat-menu #actions="matMenu">
+            <button mat-menu-item [routerLink]="'/dataset/edit'">Dataset</button>
+            <button mat-menu-item [routerLink]="'/edit'">Publication</button>
+            <button mat-menu-item [routerLink]="'/'">Software</button>
+            <button mat-menu-item [routerLink]="'/'">Codebook</button>
+        </mat-menu>
+    <a *ngIf="isLoggedIn" mat-stroked-button (click)="logout()" color="primary">Log out</a>
+
+</div>

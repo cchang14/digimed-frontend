@@ -1,0 +1,45 @@
+<div class="sidenav" fxLayout="column" fxLayoutGap="2em">
+    <div *ngIf="buttons || buttonPrimary || buttonWarn" fxLayout="column" fxLayoutGap="0.5em">
+      <h5>ACTIONS</h5>
+      <a *ngIf="buttonPrimary" mat-flat-button color="primary" [routerLink]="buttonPrimary.url" (click)="buttonPrimary.function">{{ buttonPrimary.content }}</a>
+      <div *ngIf="buttons">
+        <a *ngFor="let button of buttons" mat-stroked-button>{{ button.content }}</a>
+      </div>
+      <a *ngIf="buttonWarn" mat-stroked-button color="warn">{{ buttonWarn.content }}</a>      
+    </div>
+  
+    <div *ngIf="defaultNav; else elseNav" fxLayout="column">
+        <h5>NAVIGATION</h5>
+        <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z0" expanded=true>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <a mat-list-item><mat-icon inline="true">folder</mat-icon><span>  My Research</span></a>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item [routerLink]="['/dataset']" routerLinkActive="active-sidebar"><mat-icon>insert_chart</mat-icon><span>Dataset</span></a>
+                    <a mat-list-item><mat-icon>assignment</mat-icon><span>Publication</span></a>
+                    <a mat-list-item><mat-icon>apps</mat-icon><span>Software</span></a>
+                    <a mat-list-item><mat-icon>code</mat-icon><span>Codebook</span></a>
+                    <a mat-list-item><mat-icon>group</mat-icon><span>Share with me</span></a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+    <ng-template #elseNav>
+        <div fxLayout="column">
+            <h5>{{ navTitle }}</h5>
+            <ul>
+                <li *ngFor="let item of itemList">
+                    <a routerLink='{{ item.path }}' routerLinkActive="active-sidebar">
+                        <!-- <mat-icon>{{ item.icon }}</mat-icon> -->
+                        <span>{{ item.content}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ng-template>
+    
+  </div>

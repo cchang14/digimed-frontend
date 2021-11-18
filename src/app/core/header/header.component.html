@@ -1,0 +1,49 @@
+<!-- top toolbar -->
+<!-- <mat-toolbar> -->
+    <div class="navbar" fxLayout="column" fxLayoutAlign="none center">
+        <div class="container" fxLayout="row">
+            <div fxHide.gt-sm="true">
+                <button mat-icon-button (click)="onToggleSidenav()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <a mat-button [routerLink]="'/'"><h1>DigiMed</h1></a>
+            <div fxHide.lt-md="true">
+                <ul fxLayout>
+                    <li>
+                        <a mat-button [routerLink]="'/about/project'" color="accent" routerLinkActive="active-header">About</a>
+                    </li>
+                    <li>
+                        <a mat-button [routerLink]="'/support/faq'" color="accent" routerLinkActive="active-header">Support</a>
+                    </li>
+                    <li>
+                        <a mat-button [routerLink]="'/search'" color="accent" routerLinkActive="active-header">Explore</a>
+                    </li>
+                    <li>
+                        <a mat-button [routerLink]="'/my-research'" color="accent" routerLinkActive="active-header">My Research</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="menu-spacer"></span>
+
+            <!-- menu NOT logged in -->
+            <div *ngIf="!isLoggedIn" fxHide.lt-md="true" class="navbar-buttons">
+                <a mat-flat-button [routerLink]="'/signup'" color="primary">Sign up</a>
+                <a mat-stroked-button [routerLink]="'/login'" color="primary">Log in</a>
+            </div>
+
+            <!-- menu logged in -->
+            <div *ngIf="isLoggedIn" fxHide.lt-md="true" class="navbar-buttons">
+                <a mat-flat-button [matMenuTriggerFor]="actions" color="primary">Upload</a>
+                <mat-menu #actions="matMenu">
+                    <button mat-menu-item [routerLink]="'/dataset/edit'">Dataset</button>
+                    <button mat-menu-item [routerLink]="'/edit'">Publication</button>
+                    <button mat-menu-item [routerLink]="'/'">Software</button>
+                    <button mat-menu-item [routerLink]="'/'">Codebook</button>
+                </mat-menu>
+                <a mat-stroked-button (click)="logout()" color="primary">Log out</a>
+            </div>
+        </div>
+    </div>
+<!-- </mat-toolbar> -->
+

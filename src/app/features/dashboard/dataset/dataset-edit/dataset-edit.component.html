@@ -1,0 +1,85 @@
+<div fxLayout="row" fxFlexFill>
+    <div class="sidenav">
+        <app-sidebar 
+            [defaultNav]="defaultNav"
+            [navTitle]="navTitle"
+            [itemList]="itemList">
+        </app-sidebar>
+    </div>
+
+    <div class="content" >
+        
+        <form
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+            fxLayout="column"
+        >
+            <h2>Create Dataset</h2>
+            <h3>Basic Information</h3>
+            <p>Title</p>
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Username</mat-label> -->
+                <input 
+                matInput 
+                type="text"
+                placeholder="Your dataset title"
+                [(ngModel)]="form.title"
+                name="title"
+                required
+                #title="ngModel"> 
+
+                <mat-error *ngIf="title.errors?.required && f.submitted">
+                    Title is required.
+                </mat-error>
+                
+            </mat-form-field>  
+                
+            <p>Author</p>
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Password</mat-label> -->
+                <input 
+                matInput 
+                type="text"
+                placeholder="Your name"
+                [(ngModel)]="form.authorName"
+                name="authorName"
+                required
+                #authorName="ngModel"> 
+
+                <mat-error *ngIf="authorName.errors?.required && f.submitted">
+                    Author name is required.
+                </mat-error>
+
+            </mat-form-field>  
+
+            <p>Description</p>
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Password</mat-label> -->
+                <textarea
+                matInput 
+                rows="5"
+                type="text"
+                placeholder="Please describe your dataset."
+                [(ngModel)]="form.description"
+                name="description"
+                required
+                #description="ngModel"></textarea>
+
+                <mat-error *ngIf="description.errors?.required && f.submitted">
+                    Dataset description is required.
+                </mat-error>
+
+            </mat-form-field>  
+            
+            <div fxLayout="row">
+                <button fxFlex="50" mat-raised-button (click)="onCancel()">Cancel</button>
+                <button fxFlex="50" mat-raised-button color="primary" type="submit">Next</button>
+        </div>
+
+      </form>
+
+
+    </div>
+</div>

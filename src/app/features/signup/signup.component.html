@@ -1,0 +1,78 @@
+<div class="signup" fxLayout="column" fxLayoutAlign="center center">
+
+
+    <h2>Create new account</h2>
+
+
+    <mat-card *ngIf="isLoggedFailed">
+        Login failed: {{ errorMessage }}
+    </mat-card>
+    <mat-card *ngIf="isLoggedIn">
+        Logged in as {{ roles }}
+    </mat-card>
+    <form
+        *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+    >
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input 
+            matInput 
+            type="text"
+            [(ngModel)]="form.name"
+            name="name"
+            required
+            #name="ngModel"> 
+
+            <mat-error *ngIf="name.errors?.required && f.submitted">
+                Name is required.
+            </mat-error>
+            
+        </mat-form-field>      
+
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input 
+            matInput 
+            type="text"
+            [(ngModel)]="form.username"
+            name="username"
+            required
+            #username="ngModel"> 
+
+            <mat-error *ngIf="username.errors?.required && f.submitted">
+                Username is required.
+            </mat-error>
+            
+        </mat-form-field>  
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input 
+            matInput 
+            type="password"
+            [(ngModel)]="form.password"
+            name="password"
+            minlength="6"
+            required
+            #password="ngModel"> 
+
+            <mat-error *ngIf="password.errors?.required && f.submitted">
+                Password is required.
+            </mat-error>
+            <mat-error *ngIf="password.errors?.minlength && f.submitted">
+                Password must be at least 6 characters.
+            </mat-error>
+
+        </mat-form-field>  
+
+        <div fxLayout="column" fxLayoutAlign="none center">
+            <button mat-raised-button color="primary" type="submit">Sign up</button>
+            <p>Already have an account? Please <a [routerLink]="['../login']">log in</a>.</p>
+        </div>
+
+  </form>
+</div>

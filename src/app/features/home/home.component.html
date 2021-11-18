@@ -1,0 +1,177 @@
+<!-- jumbotron -->
+<section class="jumbotron">
+    <div fxLayout="column" fxLayoutAlign="none center">
+        <div class="container">
+            <h1>Your Digital Network for <br/>Clinical and BioMedical Information</h1>
+            <p>One repository for your research connections to manage, edit, link and share your research.</p>
+            <br/>
+            <a mat-raised-button [routerLink]="['/my-research']">Get Started</a>
+            <br/><br/>
+            <!-- <p>Already a user? Please <a href="/">sign in</a>.</p> -->
+            <div class="statistic" fxLayout="row wrap" fxLayoutAlign="none start">
+                <div>
+                    <h4>Publications</h4>
+                    <p class="statistic-number">2,896</p>
+                </div>
+                <div>
+                    <h4>Datasets</h4>
+                    <p class="statistic-number">3,9618,302</p>
+                </div>
+                <div>
+                    <h4>Softwares</h4>
+                    <p class="statistic-number">936</p>
+                </div>
+                <div>
+                    <h4>Codebooks</h4>
+                    <p class="statistic-number">291</p>
+                </div>
+                <div>
+                    <h4>Citations</h4>
+                    <p class="statistic-number">83,193</p>
+                </div>
+                <div>
+                    <h4>Downloads</h4>
+                    <p class="statistic-number">238,685</p>
+                </div>
+            </div>
+            <br/>
+
+            <!-- <div fxLayout="row" fxLayoutGap="0.5em">
+                <mat-card fxFlex="20" fxFlex.lt-md="100">
+                    <mat-card-title>Get Started</mat-card-title>
+                    <mat-card-content>Manage your research and connect to other works easily.</mat-card-content>
+                    <mat-card-actions>
+                        <a mat-stroked-button color="primary">Get Started<mat-icon>arrow_forward</mat-icon></a>
+                    </mat-card-actions>
+                </mat-card>
+                <mat-card fxFlex="20" fxFlex.lt-md="100">
+                    <mat-card-title>Explore</mat-card-title>
+                    <mat-card-content>Discover published research, datasets, software and tools.</mat-card-content>
+                    <mat-card-actions>
+                        <button mat-stroked-button color="primary">Search<mat-icon>arrow_forward</mat-icon></button>
+                    </mat-card-actions>
+                </mat-card>
+
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<div fxLayout="column" fxLayoutAlign="none center">
+    <div class="container">
+    
+        <!-- search -->
+        <section class="search" fxLayout="column" fxLayoutAlign="none center">
+            <h2>Discover published research, datasets, software and tools...</h2>
+
+            <form fxLayout="row" style="width: 100%;" fxLayoutGap="0.5em" fxLayout.xs="column">
+                <!-- <mat-form-field>
+                    <mat-label>Search</mat-label> -->
+                        <input class="search-input" type="search" placeholder="Search keywords, author...">
+                        <button mat-raised-button color="primary">Search</button>
+                <!-- </mat-form-field> -->
+            </form>
+        </section>
+
+        <!-- statistics -->
+        <section>
+            <h5 class="section-title">STATISTICS</h5>
+            <h2>The network that helps your research shine</h2>
+            
+            <app-bar></app-bar>
+            <app-bar></app-bar>
+        
+        </section>
+
+        <!-- feature -->
+        <section fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between">
+            <div fxFlex="40" fxLayoutAlign="center center">
+                <img src="../../assets/img/home-product-img.png">
+            </div>
+            <div fxFlex="60" fxLayout="column">
+                <h5 class="section-title">FEATURES</h5>
+                <h2>How can DigiMed help you?</h2>
+                <div fxLayout="row" fxLayoutAlign="space-between start" class="feature">
+                    <div fxFlex="49">
+                        <h4 fxLayoutALign="center center"><mat-icon color="primary">cloud_upload</mat-icon>
+                        <span>Upload</span></h4>
+                        <p>Multiple formats are supported, including dataset files, softwares, and publications.</p>
+                    </div>
+                    <div fxFlex="49">
+                        <h4><mat-icon color="primary">screen_share</mat-icon>
+                        <span>Share</span></h4>
+                        <p>Multiple formats are supported, including dataset files, softwares, and publications.</p>
+                    </div>
+                </div>
+                <br/>
+                <div fxLayout="row" fxLayoutAlign="space-between start" class="feature">
+                    <div fxFlex="49">
+                        <h4><mat-icon color="primary">settings_applications</mat-icon>
+                        <span>Manage</span></h4>
+                        <p>Multiple formats are supported, including dataset files, softwares, and publications.</p>
+                    </div>
+                    <div fxFlex="49">
+                        <h4><mat-icon color="primary">publish</mat-icon>
+                        <span>Publish</span></h4>
+                        <p>Multiple formats are supported, including dataset files, softwares, and publications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- research -->
+        <section class="research">
+            <h5 class="section-title">RESEARCH</h5>
+            <h2>Recent published research</h2>
+            <div class="research-cards" fxLayout="column" fxLayoutGap="0.5em">
+                <div>
+                    <a [routerLink]="'/'">
+                        <p>
+                            <button mat-stroked-button>Publication</button>
+                            Cuscuta sect. Californicae (Convolvulaceae) revisited: ‘cryptic’ speciation and host range differentiation
+                        </p>
+                    </a>
+                </div>
+                <div>
+                    <a [routerLink]="'/'">
+                        <p>
+                            <button mat-stroked-button>Software</button>
+                            Data from: Influence of range position on locally adaptive gene-environment associations in Populus flowering time genes
+                        </p>
+                    </a>
+                </div>
+                <div>
+                    <a [routerLink]="'/'">
+                        <p>
+                            <button mat-stroked-button>Codebook</button>
+                            An integrated population model for bird monitoring in North America
+                        </p>
+                    </a>
+                </div>
+                <div>
+                    <a [routerLink]="'/'">
+                        <p>
+                            <button mat-stroked-button>Dataset</button>
+                            Data from: Influence of range position on locally adaptive gene-environment associations in Populus flowering time genes
+                        </p>
+                    </a>
+                </div>
+                <div>
+                    <a [routerLink]="'/'">
+                        <p>
+                            <button mat-stroked-button>Publication</button>
+                            Cuscuta sect. Californicae (Convolvulaceae) revisited: ‘cryptic’ speciation and host range differentiation
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<!-- promote -->
+<section class="promote" fxLayout="column" fxLayoutAlign="center center">
+    <h2>Get started with DigiMed today</h2>
+    <a mat-flat-button [routerLink]="'/'">Get Started</a>
+</section>

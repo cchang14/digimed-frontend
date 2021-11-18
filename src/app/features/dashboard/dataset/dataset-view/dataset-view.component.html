@@ -1,0 +1,31 @@
+<div fxLayout="row" fxFlexFill>
+    <div class="sidenav">
+        <app-sidebar 
+
+            [buttonPrimary]="buttonPrimary"
+            [defaultNav]="defaultNav">
+        </app-sidebar>
+    </div>
+
+    <div class="content">
+        <div *ngIf="dataset" fxLayout="column" fxLayoutGap="0.5em">
+            <h2>{{ dataset.name }}</h2>
+            <p>Author: {{ dataset.creator.employees.name }}, University of Waterloo</p>
+            <mat-card>
+                <mat-card-content>
+                    <h3>Description</h3>
+                    <p>{{ dataset.description }}</p>
+                    <p>Keywords: Kaggle, COVID-19 CBC news, NLP data</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content>
+                    <h3>Datafiles</h3>
+                    <p>Download link: 
+                        <a href="https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26/download">https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26/download</a></p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+</div>

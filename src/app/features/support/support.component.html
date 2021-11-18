@@ -1,0 +1,13 @@
+<div fxLayout="row" fxFlexFill>
+    <div class="sidenav">
+        <app-sidebar 
+            [defaultNav]="defaultNav"
+            [navTitle]="navTitle"
+            [itemList]="itemList"></app-sidebar>
+    </div>
+
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
